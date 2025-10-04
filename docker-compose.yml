@@ -1,11 +1,13 @@
 version: "3.9"
 services:
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend:/app # Sync your host folder with container
+      - /app/node_modules # Prevent node_modules on host from overwriting container
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
