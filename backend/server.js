@@ -2,7 +2,7 @@ import express from "express";
 import { createClient } from "@supabase/supabase-js";
 import dotenv from "dotenv";
 
-dotenv.config(); // load .env
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -14,14 +14,9 @@ const supabase = createClient(
 
 app.use(express.json());
 
+// Test route
 app.get("/", (req, res) => {
-  res.send("Tilly backend is running 🚀");
-});
-
-app.get("/employees", async (req, res) => {
-  const { data, error } = await supabase.from("employees").select("*");
-  if (error) return res.status(500).json({ error: error.message });
-  res.json(data);
+  res.send("Tilly backend running 🚀");
 });
 
 app.listen(PORT, () => {
