@@ -1,21 +1,18 @@
-# Use official Node.js image
+# Use Node.js
 FROM node:20-alpine
 
-# Set working directory
+# Working directory
 WORKDIR /app
 
-# Install dependencies first (better caching)
+# Copy package.json first and install deps
 COPY package*.json ./
-RUN npm install --frozen-lockfile
+RUN npm install
 
 # Copy rest of the app
 COPY . .
 
-# Build Next.js app
-RUN npm run build
-
 # Expose Next.js port
 EXPOSE 3000
 
-# Start Next.js in production mode
-CMD ["npm", "start"]
+# Run Next.js in dev mode (with hot reload)
+CMD ["npm", "run", "dev"]

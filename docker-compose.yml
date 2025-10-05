@@ -1,13 +1,29 @@
-version: "3.9"
+version: "3.8"
+
 services:
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.dev
-    volumes:
-      - ./frontend:/app # Sync your host folder with container
-      - /app/node_modules # Prevent node_modules on host from overwriting container
+    build: ./frontend
+    container_name: tilly-frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm run dev
     environment:
       - NODE_ENV=development
+
+  backend:
+    build: ./backend
+    container_name: tilly-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - PORT=4000
