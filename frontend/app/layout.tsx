@@ -1,4 +1,3 @@
-import "./globals.css";
 import "../styles/theme.css";
 import { ReactNode } from "react";
 import NavMenu from "./components/NavMenu";
