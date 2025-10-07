@@ -1,4 +1,5 @@
 import "../styles/theme.css";
+import "../styles/components.css";
 import { ReactNode } from "react";
 import NavMenu from "./components/NavMenu";
 import Footer from "./components/Footer";
