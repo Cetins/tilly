@@ -14,6 +14,10 @@ export default function NavMenu() {
       <Link href="/about">
         About
       </Link>
+
+      <Link href="/test">
+        Test
+      </Link>
       
     </nav>
   );
