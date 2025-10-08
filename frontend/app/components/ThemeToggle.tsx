@@ -29,13 +29,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="btn-outline"
+      className="btn-circle"
       style={{
         marginLeft: "auto",
         display: "block",
       }}
     >
-      {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      {theme === "light" ? "🌙" : "☀️"}
     </button>
   );
 }
