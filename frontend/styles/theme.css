@@ -81,16 +81,6 @@
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
-  header {
-    display: flex;  
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-md) var(--space-lg);
-    background-color: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
-  }
   
   h1, h2, h3 {
     margin: var(--space-md) 0;
