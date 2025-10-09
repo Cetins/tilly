@@ -1,15 +1,15 @@
 export default function HomePage() {
   return (
     <div className="container">
-      <h1>Welcome to Tilly 👋</h1>
-      <p>Your sales and commission tracker starts here.</p>
-      <a href="/about" className="btn">Learn more</a>
-      <button className="btn-fill">
-        Button Fill
-      </button>
-      <button className="btn-outline">
-        Button Outline
-      </button>
+      <section className="hero">
+        <div className="hero-text">
+          <h1>Turn Chaos into Clarity</h1>
+          <p>Running a small business can be overwhelming, but managing your sales, stock, and commissions doesn’t have to be. Tilly brings everything together in one intuitive platform, giving you a clear view of your business at a glance. Track sales, monitor inventory, calculate commissions, and make informed decisions faster — all while saving time and reducing errors. Focus on growing your business and serving your customers, while Tilly takes care of the details.</p>
+        </div>
+        <div className="hero-image">
+          <img src="tilly-illustration.png" alt="Sales tracking illustration"/>
+        </div>
+      </section>
     </div>
   );
 }

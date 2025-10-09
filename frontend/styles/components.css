@@ -1,4 +1,129 @@
 /* =========
+     HEADER
+     ========= */  
+
+header {
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+nav {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+/* =============================
+   HERO SECTION (landing layout)
+============================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  gap: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  font-family: var(--font-family-base);
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  max-width: 500px;
+  line-height: 1.6;
+  color: var(--color-text-secondary, var(--color-text));
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1re
+  }
+}
+
+/* =========
+     CARDS
+     ========= */  
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  font-size: 1.25rem;
+  font-weight: 600;  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.card-body {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* =========
      BUTTONS
      ========= */  
 
@@ -47,47 +172,53 @@
   transform: translateY(0);
 }
 
-.btn-outline {
+.btn-circle {
+  display: inline-flex;
   align-items: center;
-  background-clip: padding-box;
+  justify-content: center;
+
+  /* Core shape */
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;             /* ✅ keeps it circular even if padding changes */
+  padding: 0.75rem;                /* equal padding = scalable size */
+  min-width: 2.5rem;               /* keeps it usable on mobile */
+  min-height: 2.5rem;
+
+  /* Visual style (kept from your original) */
   background-color: #fff;
+  background-clip: padding-box;
   border: 1px solid #182f7a;
-  border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
   color: #182f7a;
   cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  justify-content: center;
   line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
   text-decoration: none;
-  transition: all 250ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
+  transition: all 250ms ease;
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
 }
 
-.btn-outline:hover,
-.btn-outline:focus {
+.btn-circle:hover,
+.btn-circle:focus {
   background-color: #1d388f;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-.btn-outline:hover {
+.btn-circle:hover {
   transform: translateY(-1px);
 }
 
-.btn-outline:active {
+.btn-circle:active {
   background-color: #182f7a;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+

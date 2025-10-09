@@ -14,10 +14,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <NavMenu/>
-        <ThemeToggle />
+        <header>
+          <NavMenu/>
+          <ThemeToggle/>
+        </header>
+
         <main >{children}</main>
-        <Footer/>
+        
+        <footer>
+          <Footer/>
+        </footer>
       </body>
     </html>
   );
