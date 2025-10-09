@@ -172,53 +172,67 @@ nav {
   transform: translateY(0);
 }
 
-.btn-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* ===============================
+   THEME TOGGLE SWITCH (Minimal)
+=============================== */
+.theme-switch {
+  --switch-width: 3.5rem;
+  --switch-height: 1.8rem;
+  --handle-size: 1.4rem;
 
-  /* Core shape */
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;             /* ✅ keeps it circular even if padding changes */
-  padding: 0.75rem;                /* equal padding = scalable size */
-  min-width: 2.5rem;               /* keeps it usable on mobile */
-  min-height: 2.5rem;
-
-  /* Visual style (kept from your original) */
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #182f7a;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #182f7a;
-  cursor: pointer;
-  font-family: system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.25;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: all 250ms ease;
-  vertical-align: middle;
   position: relative;
-  margin: 0;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-text);
+  border-radius: var(--switch-height);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.3rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
 }
 
-.btn-circle:hover,
-.btn-circle:focus {
-  background-color: #1d388f;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+/* handle */
+.switch-handle {
+  position: absolute;
+  top: 50%;
+  left: 0.2rem;
+  width: var(--handle-size);
+  height: var(--handle-size);
+  border-radius: 50%;
+  background-color: var(--color-text);
+  transform: translate(0, -50%);
+  transition: all 0.3s ease;
 }
 
-.btn-circle:hover {
-  transform: translateY(-1px);
+/* icons */
+.icon {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-.btn-circle:active {
-  background-color: #182f7a;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);
+.theme-switch.dark .switch-handle {
+  left: calc(100% - var(--handle-size) - 0.2rem);
 }
 
+.theme-switch.dark .sun {
+  opacity: 0.3;
+}
+
+.theme-switch.dark .moon {
+  opacity: 1;
+}
+
+/* responsive scaling for mobile */
+@media (max-width: 500px) {
+  .theme-switch {
+    --switch-width: 3rem;
+    --switch-height: 1.5rem;
+    --handle-size: 1.2rem;
+  }
+}
