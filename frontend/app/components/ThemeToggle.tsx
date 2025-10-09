@@ -26,8 +26,6 @@ export default function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <span className="switch-handle"></span>
-      <span className="icon sun">☀️</span>
-      <span className="icon moon">🌙</span>
     </button>
   );
 }
