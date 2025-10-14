@@ -1,3 +1,6 @@
+import SignUp from "../components/auth/SignUp";
+import Login from "../components/auth/Login";
+
 export default function TestPage() {
     return (
       <div>
@@ -17,6 +20,12 @@ export default function TestPage() {
         <button className="btn-outline">
         Button Outline
         </button>
+        <div>
+          <SignUp/>
+        </div>
+        <div>
+          <Login/>
+        </div>
       </div>
     );
   }
