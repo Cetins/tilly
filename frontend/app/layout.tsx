@@ -3,7 +3,7 @@ import "../styles/components.css";
 import { ReactNode } from "react";
 import NavMenu from "./components/NavMenu";
 import Footer from "./components/Footer";
-import ThemeToggle from "../app/components/ThemeToggle"
+import { AuthProvider } from "../app/context/AuthContext";
 
 export const metadata = {
   title: "Tilly",
@@ -14,16 +14,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <header>
-          <NavMenu/>
-          <ThemeToggle/>
-        </header>
+        <AuthProvider>
+          <header>
+            <NavMenu />
+          </header>
 
-        <main >{children}</main>
-        
-        <footer>
-          <Footer/>
-        </footer>
+          <main>{children}</main>
+
+          <footer>
+            <Footer />
+          </footer>
+        </AuthProvider>
       </body>
     </html>
   );
