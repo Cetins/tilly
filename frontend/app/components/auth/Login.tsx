@@ -20,7 +20,7 @@ export default function Login() {
 
   return (
     <div className="card">
-      <h2>Login</h2>
+      <h2>Log In</h2>
       <input
         className="input-field"
         type="email"
@@ -35,7 +35,7 @@ export default function Login() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="btn-fill" onClick={handleLogin}>Login</button>
+      <button className="btn-fill" onClick={handleLogin}>Log In</button>
       {message && <p>{message}</p>}
     </div>
   );
