@@ -7,6 +7,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSignUp = async () => {
     const { data, error } = await supabase.auth.signUp({
@@ -16,6 +17,10 @@ export default function SignUp() {
 
     if (error) setMessage(error.message);
     else setMessage("Sign-up successful! Check your email to confirm.");
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -28,13 +33,22 @@ export default function SignUp() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <input
-        className="input-field"
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className="password-container">
+        <input
+          className="input-field password-input"
+          type={showPassword ? "text" : "password"}
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button
+          type="button"
+          className="password-toggle"
+          onClick={togglePasswordVisibility}
+        >
+          {showPassword ? "HIDE" : "SHOW"}
+        </button>
+      </div>
       <button className="btn-fill" onClick={handleSignUp}>Sign Up</button>
       {message && <p>{message}</p>}
     </div>
