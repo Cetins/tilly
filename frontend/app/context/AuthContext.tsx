@@ -1,9 +1,10 @@
 "use client";
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { supabase } from "@/lib/SupabaseClient";
+import { User } from '@supabase/supabase-js'; // Import the User type
 
 type AuthContextType = {
-  user: any | null;
+  user: User | null;  // Changed from 'any' to 'User'
   loading: boolean;
   signOut: () => Promise<void>;
 };
@@ -15,7 +16,7 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<any | null>(null);
+  const [user, setUser] = useState<User | null>(null);  // Changed from 'any' to 'User'
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { supabase } from '@/lib/SupabaseClient'
 import { User, Mail, Calendar } from 'lucide-react'
+import { User as SupabaseUser } from '@supabase/supabase-js' // Import the User type
 
 export default function DashboardPage() {
   const params = useParams()
   const userId = params.userId as string
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<SupabaseUser | null>(null) // Changed from 'any' to 'SupabaseUser'
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function DashboardPage() {
     <div className="dashboard-content">
       <header className="dashboard-header">
         <h1>Welcome back!</h1>
-        <p>Here's your personalized dashboard</p>
+        <p>Here&apos;s your personalized dashboard</p> {/* Fixed the apostrophe */}
       </header>
 
       <div className="dashboard-grid">

@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/SupabaseClient'
+import { User as SupabaseUser } from '@supabase/supabase-js' // Import the User type
 import { User, LogIn } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Navigation() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<SupabaseUser | null>(null);
   const [loading, setLoading] = useState(true)
   const router = useRouter()
 
