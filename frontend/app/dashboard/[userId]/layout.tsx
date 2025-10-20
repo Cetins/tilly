@@ -1,23 +1,15 @@
 'use client'
 
-import { useState } from 'react'
 import { useParams } from 'next/navigation'
-import { Moon, Sun, LogOut, Settings, Home, BarChart3 } from 'lucide-react'
-
+import { LogOut, Settings, Home, BarChart3 } from 'lucide-react'
+import ThemeToggle from '@/app/components/ThemeToggle'
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const [darkMode, setDarkMode] = useState(false)
   const params = useParams()
   const userId = params.userId as string
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode)
-    // Add your theme toggle logic here
-    document.documentElement.classList.toggle('dark')
-  }
 
   const handleLogout = async () => {
     // Add your logout logic here
@@ -53,14 +45,8 @@ export default function DashboardLayout({
 
         {/* Sidebar Footer - Column Direction */}
         <div className="sidebar-footer-column">
-          <button 
-            onClick={toggleTheme}
-            className="sidebar-footer-button"
-            title={darkMode ? 'Light mode' : 'Dark mode'}
-          >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
-          </button>
+          {/* Use your updated ThemeToggle component with Moon/Sun icons */}
+          <ThemeToggle />
           
           <button 
             onClick={handleLogout}

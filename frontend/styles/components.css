@@ -18,7 +18,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #3b82f6;
+  color: var(--color-primary);
 }
 
 .nav-center {
@@ -28,7 +28,7 @@
 }
 
 .nav-link {
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -36,8 +36,8 @@
 }
 
 .nav-link:hover {
-  color: #374151;
-  background-color: #f3f4f6;
+  color: var(--color-surface);
+  background-color: var(--color-primary);
 }
 
 .nav-right {
@@ -51,13 +51,13 @@
   background: none;
   border-radius: 0.375rem;
   cursor: pointer;
-  color: #6b7280;
+  color: var(--color-primary);
   transition: all 0.2s;
 }
 
 .nav-button:hover {
-  background-color: #f3f4f6;
-  color: #374151;
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
 
 .nav-button:disabled {
@@ -68,13 +68,12 @@
 /* Dashboard Layout */
 .dashboard-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 80dvh;
 }
 
 .sidebar {
   width: 250px;
-  background: #f8fafc;
-  border-right: 1px solid #e5e7eb;
+  background: var(--color-surface);
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
@@ -82,7 +81,6 @@
 
 .sidebar-header {
   padding: 0 1rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
   margin-bottom: 1rem;
 }
 
@@ -100,15 +98,15 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-decoration: none;
   border-radius: 0.375rem;
   transition: all 0.2s;
 }
 
 .sidebar-nav-item:hover {
-  background-color: #e5e7eb;
-  color: #374151;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
 }
 
 /* Sidebar Footer - Column Layout */
@@ -117,7 +115,6 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 0.5rem 0;
-  border-top: 1px solid #e5e7eb;
   margin-top: auto;
 }
 
@@ -128,7 +125,7 @@
   padding: 0.75rem 1rem;
   border: none;
   background: none;
-  color: #6b7280;
+  color: var(--color-text-muted);
   cursor: pointer;
   border-radius: 0.375rem;
   transition: all 0.2s;
@@ -136,23 +133,23 @@
 }
 
 .sidebar-footer-button:hover {
-  background-color: #e5e7eb;
-  color: #374151;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
 }
 
 .logout-button {
-  color: #ef4444;
+  color: var(--color-error);
 }
 
 .logout-button:hover {
   background-color: #fecaca;
-  color: #dc2626;
+  color: var(--color-error);
 }
 
 .dashboard-main {
   flex: 1;
   padding: 2rem;
-  background: white;
+  background: var(--color-bg);
 }
 
 /* Dashboard Content */
@@ -172,9 +169,9 @@
 
 .dashboard-card {
   padding: 1.5rem;
-  background: #f8fafc;
+  background: var(--color-surface);
   border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-text);
   transition: all 0.2s;
 }
 
@@ -186,7 +183,7 @@
 .card-icon {
   width: 2rem;
   height: 2rem;
-  color: #3b82f6;
+  color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
@@ -537,63 +534,32 @@
    MINIMAL THEME SWITCH
    - Flat, Apple-style aesthetic
 ============================ */
-.theme-switch {
-  --switch-width: 3.2rem;
-  --switch-height: 1.8rem;
-  --handle-size: 1.4rem;
-
-  position: relative;
-  width: var(--switch-width);
-  height: var(--switch-height);
-  border-radius: var(--switch-height);
-  background-color: var(--toggle-bg, #e5e5e5);
-  border: none;
-  cursor: pointer;
+.theme-toggle-button {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  padding: 0 0.2rem;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s;
 }
 
-/* handle */
-.switch-handle {
-  position: absolute;
-  top: 50%;
-  left: 0.2rem;
-  width: var(--handle-size);
-  height: var(--handle-size);
-  background-color: white;
-  border-radius: 50%;
-  transform: translate(0, -50%);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+.theme-toggle-button:hover {
+  background-color: var(--hover-color);
 }
 
-/* dark mode active state */
-.theme-switch.dark {
-  background-color: var(--toggle-active-bg, #333);
-  justify-content: flex-end;
+/* Add this to your CSS if needed */
+.sidebar-footer-button .theme-switch {
+  margin-right: 8px;
 }
 
-.theme-switch.dark .switch-handle {
-  transform: translate(calc(var(--switch-width) - var(--handle-size) - 0.4rem), -50%);
-  background-color: var(--color-text, #fff);
-}
-
-/* hover & focus states */
-.theme-switch:hover,
-.theme-switch:focus {
-  box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.1);
-  outline: none;
-}
-
-/* smooth scale for mobile */
-@media (max-width: 600px) {
-  .theme-switch {
-    --switch-width: 2.8rem;
-    --switch-height: 1.5rem;
-    --handle-size: 1.2rem;
-  }
+.sidebar-footer-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* ==================================
