@@ -137,6 +137,15 @@
   color: var(--color-primary);
 }
 
+.sidebar-nav-item.active {
+  background-color: var(--active-color);
+  border-left: 3px solid var(--primary-color);
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--hover-color);
+}
+
 .logout-button {
   color: var(--color-error);
 }

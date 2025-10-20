@@ -40,7 +40,7 @@ export default function Navigation() {
     <nav className="navbar">
       {/* Left side - Logo/Brand */}
       <div className="nav-left">
-        <h1 className="logo">Your Logo</h1>
+        <h1 className="logo">Tilly</h1>
       </div>
 
       {/* Center - Navigation Items (row direction) */}
