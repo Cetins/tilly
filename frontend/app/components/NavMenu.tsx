@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/SupabaseClient'
 import { User, LogIn } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Navigation() {
   const [user, setUser] = useState(null)
@@ -43,10 +44,10 @@ export default function Navigation() {
 
       {/* Center - Navigation Items (row direction) */}
       <div className="nav-center">
-        <a href="/" className="nav-link">Home</a>
-        <a href="/about" className="nav-link">About</a>
-        <a href="/services" className="nav-link">Services</a>
-        <a href="/contact" className="nav-link">Contact</a>
+        <Link href="/" className="nav-link">Home</Link>
+        <Link href="/about" className="nav-link">About</Link>
+        <Link href="/services" className="nav-link">Services</Link>
+        <Link href="/contact" className="nav-link">Contact</Link>
       </div>
 
       {/* Right side - Login/Profile Button */}
