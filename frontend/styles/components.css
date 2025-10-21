@@ -1,3 +1,446 @@
+/* Navigation Bar */
+
+.navbar {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-md);
+  font-weight: 500;
+  padding: .5rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.nav-center {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-surface);
+  background-color: var(--color-primary);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: all 0.2s;
+}
+
+.nav-button:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 80dvh;
+}
+
+.sidebar {
+  width: 250px;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.sidebar-header {
+  padding: 0 1rem 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Sidebar Navigation - Column Layout */
+.sidebar-nav-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+/* Sidebar Footer - Column Layout */
+.sidebar-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem 0;
+  margin-top: auto;
+}
+
+.sidebar-footer-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.sidebar-footer-button:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.sidebar-nav-item.active {
+  background-color: var(--active-color);
+  border-left: 3px solid var(--primary-color);
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--hover-color);
+}
+
+.logout-button {
+  color: var(--color-error);
+}
+
+.logout-button:hover {
+  background-color: #fecaca;
+  color: var(--color-error);
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 2rem;
+  background: var(--color-bg);
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  max-width: 1200px;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.card-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* =============================
+   HERO SECTION (landing layout)
+============================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  gap: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  font-family: var(--font-family-base);
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  max-width: 500px;
+  line-height: 1.6;
+  color: var(--color-text-secondary, var(--color-text));
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1re
+  }
+}
+/* =========
+     TWO COLUMN CONTAINER
+     ========= */ 
+
+/* container holds columns */
+.container {
+  display: flex;
+  flex-wrap: wrap;      /* allows wrapping on small screens */
+  padding: 2rem;
+  min-height: 80dvh;    /* section fills full viewport height */
+  background-color: var(--color-bg);
+}
+
+/* each column behaves like a block that centers its content */
+.column {
+  flex: 1 1 300px; /* flexible: grow/shrink but at least 300px wide */
+  display: flex;
+  justify-content: center; /* centers box horizontally */
+  align-items: center; /* centers box vertically */
+}
+
+.column-left {
+  background: #020024;
+  background: linear-gradient(20deg,var(--color-text) 0%, var(--color-primary) 35%, var(--color-primary-hover) 100%);
+}
+
+.column-right {
+  border: 1px solid #c6e7f8;
+}
+
+/* box styling */
+.box {
+  background-color: var(--color-surface, #fff);
+  color: var(--color-text, #182f7a);
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* RESPONSIVE — when screen is small */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .box {
+    width: 90%;
+  }
+}
+
+
+/* =========
+     CARDS
+     ========= */  
+
+.card {
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  font-size: 1.25rem;
+  font-weight: 600;  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.card-body {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* =========
+     TEXT BLOCKS
+     ========= */  
+
+.text-block {
+width: 100%;
+max-width: 800px; /* adjust to desired width for readability */
+margin: 0 auto;
+padding: 2rem 1.5rem;
+background-color: var(--color-bg);
+color: var(--color-text);
+font-family: var(--font-family-base);
+line-height: 1.6;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-block h2,
+.text-block h3,
+.text-block h4 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.text-block p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary, var(--color-text));
+  margin-bottom: 1.5rem;
+}
+
+.text-block a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.text-block a:hover {
+  color: var(--color-accent, var(--color-primary));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text-block {
+    padding: 1.5rem 1rem;
+  }
+
+  .text-block h2,
+  .text-block h3,
+  .text-block h4 {
+    font-size: 1.6rem;
+  }
+
+  .text-block p {
+    font-size: 1rem;
+  }
+}
+
+/* =========
+     LISTS
+     ========= */  
+
+.text-list {
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--color-text-secondary, var(--color-text));
+  line-height: 1.6;
+  font-family: var(--font-family-base);
+}
+
+.text-list li {
+  margin-bottom: 1rem;
+}
+
+
 /* =========
      BUTTONS
      ========= */  
@@ -5,8 +448,8 @@
 .btn-fill {
   align-items: center;
   background-clip: padding-box;
-  background-color: #182f7a;
-  border: 1px solid #182f7a;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
@@ -33,7 +476,8 @@
 
 .btn-fill:hover,
 .btn-fill:focus {
-  background-color: #1d388f;
+  background-color: #fff;
+  color: #1d388f;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -50,12 +494,12 @@
 .btn-outline {
   align-items: center;
   background-clip: padding-box;
-  background-color: #fff;
-  border: 1px solid #182f7a;
+  background-color: #fff; /* light background */
+  border: 1px solid #182f7a; /* original blue border */
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: #182f7a;
+  color: #182f7a; /* same as border */
   cursor: pointer;
   display: inline-flex;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -78,7 +522,8 @@
 
 .btn-outline:hover,
 .btn-outline:focus {
-  background-color: #1d388f;
+  background-color: #182f7a; /* filled on hover */
+  color: #fff; /* text becomes white */
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -87,7 +532,123 @@
 }
 
 .btn-outline:active {
-  background-color: #182f7a;
+  background-color: #1d388f; /* slightly darker on active */
+  color: #fff;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+
+
+/* ============================
+   MINIMAL THEME SWITCH
+   - Flat, Apple-style aesthetic
+============================ */
+.theme-toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Add this to your CSS if needed */
+.sidebar-footer-button .theme-switch {
+  margin-right: 8px;
+}
+
+.sidebar-footer-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==================================
+   INPUT FIELD 
+================================== */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--color-border, #ccc);
+  border-radius: 0.6rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base, system-ui, sans-serif);
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* placeholder */
+.input-field::placeholder {
+  color: var(--color-muted, #888);
+  opacity: 0.8;
+  transition: color 0.25s ease;
+}
+
+/* focus */
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-accent, #182f7a);
+  background-color: var(--color-surface, #f9f9f9);
+}
+
+/* subtle hover */
+.input-field:hover {
+  border-color: var(--color-accent, #182f7a);
+}
+
+/* dark theme override (if using data-theme="dark") */
+[data-theme="dark"] .input-field {
+  background-color: var(--color-surface-dark, #1f1f1f);
+  border-color: var(--color-border-dark, #333);
+  color: var(--color-text-dark, #f2f2f2);
+}
+
+[data-theme="dark"] .input-field::placeholder {
+  color: var(--color-muted-dark, #aaa);
+}
+
+[data-theme="dark"] .input-field:focus {
+  background-color: var(--color-bg-dark, #2a2a2a);
+  border-color: var(--color-accent, #82aaff);
+}
+
+/* ==================================
+   PASSWORD SHOW/HIDE BUTTON
+================================== */
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 60px; /* Make space for the toggle button */
+}
+
+.password-toggle {
+  position: absolute;
+  right: .5rem;
+  background: none;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: .6rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.password-toggle:hover {
+  color: var(--text-md);
+}
+
