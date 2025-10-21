@@ -14,7 +14,7 @@ export default function UnderConstruction() {
                 <line x1="102" y1="20" x2="102" y2="40" stroke="var(--color-text)" strokeWidth="1" strokeDasharray="3 2"/>
                 </svg>
                 <h2>Coming Soon</h2>
-                <p>We're constructing this feature for you</p>
+                <p>We&#39;re constructing this feature for you</p>
             </div>
         </div>
     )
