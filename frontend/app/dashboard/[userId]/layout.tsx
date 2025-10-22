@@ -1,10 +1,11 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import { LogOut, Settings, Home, BarChart3, DollarSign } from 'lucide-react'
+import { Settings, Home, BarChart3, DollarSign } from 'lucide-react'
 import ThemeToggle from '@/app/components/ThemeToggle'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import LogoutButton from '@/app/components/auth/Logout'
 
 export default function DashboardLayout({
   children,
@@ -73,13 +74,7 @@ export default function DashboardLayout({
         <div className="sidebar-footer-column">
           <ThemeToggle />
           
-          <button 
-            onClick={handleLogout}
-            className="sidebar-footer-button logout-button"
-          >
-            <LogOut size={20} />
-            <span>Log Out</span>
-          </button>
+          <LogoutButton />
         </div>
       </aside>
 
