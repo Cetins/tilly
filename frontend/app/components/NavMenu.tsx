@@ -63,7 +63,7 @@ export default function Navigation() {
             onClick={handleProfileClick}
             title={user ? 'Profile' : 'Login'}
           >
-            {user ? <User size={20} /> : <LogIn size={20} />}
+            {user ? <User size={20} /> : <span className='nav-button-items'><LogIn size={20} />Login</span>}
           </button>
         )}
       </div>

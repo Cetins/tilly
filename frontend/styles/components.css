@@ -55,6 +55,13 @@
   transition: all 0.2s;
 }
 
+.nav-button-items {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.1rem;
+}
+
 .nav-button:hover {
   background-color: var(--color-surface);
   color: var(--color-text);
@@ -461,7 +468,7 @@ transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 0;
+  margin-top: 1rem;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
