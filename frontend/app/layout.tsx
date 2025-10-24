@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import NavMenu from "./components/NavMenu";
 import Footer from "./components/Footer";
 import { AuthProvider } from "../app/context/AuthContext";
+import { ThemeProvider } from "../app/context/ThemeContext"; // Add this import
 
 export const metadata = {
   title: "Tilly",
@@ -14,17 +15,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <AuthProvider>
-          <header>
-            <NavMenu />
-          </header>
+        <ThemeProvider> {/* Add ThemeProvider here */}
+          <AuthProvider>
+            <header>
+              <NavMenu />
+            </header>
 
-          <main>{children}</main>
+            <main>{children}</main>
 
-          <footer>
-            <Footer />
-          </footer>
-        </AuthProvider>
+            <footer>
+              <Footer />
+            </footer>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
