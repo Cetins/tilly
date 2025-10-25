@@ -16,12 +16,6 @@ export default function DashboardLayout({
   const pathname = usePathname()
   const userId = params.userId as string
 
-  const handleLogout = async () => {
-    // Add your logout logic here
-    // await supabase.auth.signOut()
-    // router.push('/')
-  }
-
   // Helper function to check if a link is active
   const isActive = (path: string) => {
     return pathname === path

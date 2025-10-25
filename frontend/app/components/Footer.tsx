@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Footer() {
   return (
-      <div className="footer-content">
+      <footer className="footer-content">
         {/* Your existing footer content */}
         <div className="footer-section">
           <p>&copy; {new Date().getFullYear()} Tilly. All rights reserved.</p>
@@ -20,6 +20,6 @@ export default function Footer() {
         <div className="footer-theme-toggle">
           <ThemeToggle />
         </div>
-      </div>
+      </footer>
   );
 }
