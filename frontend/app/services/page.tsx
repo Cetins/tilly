@@ -61,7 +61,7 @@ export default function ServicesPage () {
                     <h3>Built for Real Business Challenges</h3>
                     <p>
                         We understand that modern small businesses often have hybrid teams. 
-                        Tilly handles this complexity so you don't have to.
+                        Tilly handles this complexity so you don&apos;t have to.
                     </p>
 
                     <h3>Affordable Growth</h3>
@@ -76,7 +76,7 @@ export default function ServicesPage () {
 
                     <h3>Transparent by Design</h3>
                     <p>
-                        Follow our open development journey and see exactly how we're building the tools you need.
+                        Follow our open development journey and see exactly how we&apos;re building the tools you need.
                     </p>
                 </div>
             </section>

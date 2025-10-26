@@ -7,8 +7,8 @@ export default function AboutPage() {
        <section className={styles.hero}>
          <div className={styles.hero_text}>
            <h1>About Tilly</h1>
-           <p>Every small business has a story. And, if we're honest, every small business also has a headache.</p>
-           <p>Managing employees, tracking commissions, selling products — it's a lot. Especially for businesses with a mix of wages, self-employed team members, or incentive-based pay. And when you want to add products to increase revenue, things get even more complicated. The pandemic made these challenges even harder, and many digital solutions available today are either too complex or too expensive for small businesses to adopt.</p>
+           <p>Every small business has a story. And, if we&apos;re honest, every small business also has a headache.</p>
+           <p>Managing employees, tracking commissions, selling products — it&apos;s a lot. Especially for businesses with a mix of wages, self-employed team members, or incentive-based pay. And when you want to add products to increase revenue, things get even more complicated. The pandemic made these challenges even harder, and many digital solutions available today are either too complex or too expensive for small businesses to adopt.</p>
          </div>
          <div className={styles.hero_image}>
            <Image
@@ -22,7 +22,7 @@ export default function AboutPage() {
 
        <section className={styles.hero}>
          <div className={styles.hero_text}>
-           <p>That's where Tilly comes in. I started Tilly to make life easier for small businesses — to help them manage payments, commissions, and products all in one place. Our mission is simple: reduce the digital stress so that business owners can focus on what really matters — serving their customers and growing sustainably.</p>
+           <p>That&apos;s where Tilly comes in. I started Tilly to make life easier for small businesses — to help them manage payments, commissions, and products all in one place. Our mission is simple: reduce the digital stress so that business owners can focus on what really matters — serving their customers and growing sustainably.</p>
            <p>Tilly is being built openly, step by step, and we share our journey here. We want small businesses to feel supported, empowered, and equipped with a tool that truly fits their needs. No unnecessary complexity, no expensive barriers — just smart, practical solutions designed for the people who keep our communities running.</p>
            <p>Follow along to see Tilly grow, and join us on our journey to make small business management simpler, smarter, and more enjoyable.</p>
          </div>
