@@ -41,6 +41,7 @@
   --shadow-md: 0 3px 6px rgba(0,0,0,0.1);
 }
 
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
   margin: 0;
@@ -115,6 +116,11 @@ a {
 a:hover {
   color: var(--color-primary-hover);
 }
+=======
+  /* =========
+     BUTTONS
+     ========= */  
+>>>>>>> fe1e871 (fixing conflicts after css separation)
 
 .btn_fill {
   align-items: center;
@@ -208,6 +214,7 @@ a:hover {
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+<<<<<<< HEAD
 
 footer {
   background-color: var(--color-surface);
@@ -263,3 +270,5 @@ footer {
   
 >>>>>>> a58dc8c (missing theme selection when revisit fixed. theme provider added. theme toggle button added to footer):frontend/styles/theme.css
 >>>>>>> 1979294 (missing theme selection when revisit fixed. theme provider added. theme toggle button added to footer)
+=======
+>>>>>>> fe1e871 (fixing conflicts after css separation)
