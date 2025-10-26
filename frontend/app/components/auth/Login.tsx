@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/SupabaseClient";
+import styles from './Auth.module.css'
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -45,18 +46,18 @@ export default function Login() {
   };
 
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h2>Log In</h2>
       <input
-        className="input-field"
+        className={styles.input_field}
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <div className="password-container">
+      <div className={styles.password_container}>
         <input
-          className="input-field password-input"
+          className={`${styles.input_field} ${styles.password_input}`}
           type={showPassword ? "text" : "password"}
           placeholder="Password"
           value={password}
@@ -64,13 +65,13 @@ export default function Login() {
         />
         <button
           type="button"
-          className="password-toggle"
+          className={styles.password_toggle}
           onClick={togglePasswordVisibility}
         >
           {showPassword ? "HIDE" : "SHOW"}
         </button>
       </div>
-      <button className="btn-fill" onClick={handleLogin}>Log In</button>
+      <button className={styles.btn_fill} onClick={handleLogin}>Log In</button>
       {message && <p>{message}</p>}
     </div>
   );

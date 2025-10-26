@@ -1,8 +1,7 @@
-import "../styles/theme.css";
-import "../styles/components.css";
+import "../styles/globals.css";
 import { ReactNode } from "react";
-import NavMenu from "./components/NavMenu";
-import Footer from "./components/Footer";
+import NavMenu from "./components/NavMenu/NavMenu";
+import Footer from "./components/Footer/Footer";
 import { AuthProvider } from "../app/context/AuthContext";
 import { ThemeProvider } from "../app/context/ThemeContext"; // Add this import
 
