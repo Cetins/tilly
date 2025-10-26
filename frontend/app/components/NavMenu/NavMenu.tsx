@@ -7,6 +7,7 @@ import { supabase } from '@/lib/SupabaseClient'
 import { User as SupabaseUser } from '@supabase/supabase-js'
 import { User, LogIn, Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import styles from './NavMenu.module.css'
 
 export default function Navigation() {
   const [user, setUser] = useState<SupabaseUser | null>(null);
@@ -55,13 +56,13 @@ export default function Navigation() {
   // Don't render anything until mounted on client
   if (!isMounted) {
     return (
-      <nav className="navbar">
-        <div className="nav-left">
-          <h1 className="logo">Tilly</h1>
+      <nav className={styles.navbar}>
+        <div className={styles.nav_left}>
+          <h1 className={styles.logo}>Tilly</h1>
         </div>
         {/* Render minimal content during SSR */}
-        <div className="nav-mobile-toggle">
-          <button className="nav-button" disabled>
+        <div className={styles.nav_mobile_toggle}>
+          <button className={styles.nav_button} disabled>
             <Menu size={20} />
           </button>
         </div>
@@ -70,41 +71,41 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="navbar">
+    <nav className={styles.navbar}>
       {/* Left side - Logo/Brand */}
-      <div className="nav-left">
-        <h1 className="logo">Tilly</h1>
+      <div className={styles.nav_left}>
+        <h1 className={styles.logo}>Tilly</h1>
       </div>
 
       {/* Center - Navigation Items (Desktop) */}
-      <div className="nav-center">
-        <Link href="/" className="nav-link">Home</Link>
-        <Link href="/about" className="nav-link">About</Link>
-        <Link href="/services" className="nav-link">Services</Link>
-        <Link href="/contact" className="nav-link">Contact</Link>
+      <div className={styles.nav_center}>
+        <Link href="/" className={styles.nav_link}>Home</Link>
+        <Link href="/about" className={styles.nav_link}>About</Link>
+        <Link href="/services" className={styles.nav_link}>Services</Link>
+        <Link href="/contact" className={styles.nav_link}>Contact</Link>
       </div>
 
       {/* Right side - Login/Profile Button (Desktop) */}
-      <div className="nav-right">
+      <div className={styles.nav_right}>
         {loading ? (
-          <button className="nav-button" disabled>
+          <button className={styles.nav_button} disabled>
             <User size={20} />
           </button>
         ) : (
           <button 
-            className="nav-button"
+            className={styles.nav_button}
             onClick={handleProfileClick}
             title={user ? 'Profile' : 'Login'}
           >
-            {user ? <User size={20} /> : <span className='nav-button-items'><LogIn size={20} />Login</span>}
+            {user ? <User size={20} /> : <span className={styles.nav_button_items}><LogIn size={20} />Login</span>}
           </button>
         )}
       </div>
 
       {/* Mobile Hamburger Button */}
-      <div className="nav-mobile-toggle">
+      <div className={styles.nav_mobile_toggle}>
         <button 
-          className="nav-button"
+          className={styles.nav_button}
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -115,47 +116,47 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="mobile-menu-overlay"
+          className={styles.mobile_menu_overlay}
           onClick={closeMobileMenu}
         />
       )}
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+      <div className={`${styles.mobile_menu} ${isMobileMenuOpen ? styles.mobile_menu_open : ''}`}>
         {/* Mobile Navigation Links */}
-        <div className="mobile-nav-section">
-          <Link href="/" className="nav-link" onClick={closeMobileMenu}>
+        <div className={styles.mobile_nav_section}>
+          <Link href="/" className={styles.nav_link} onClick={closeMobileMenu}>
             Home
           </Link>
-          <Link href="/about" className="nav-link" onClick={closeMobileMenu}>
+          <Link href="/about" className={styles.nav_link} onClick={closeMobileMenu}>
             About
           </Link>
-          <Link href="/services" className="nav-link" onClick={closeMobileMenu}>
+          <Link href="/services" className={styles.nav_link} onClick={closeMobileMenu}>
             Services
           </Link>
-          <Link href="/contact" className="nav-link" onClick={closeMobileMenu}>
+          <Link href="/contact" className={styles.nav_link} onClick={closeMobileMenu}>
             Contact
           </Link>
         </div>
 
         {/* Mobile Auth Button */}
-        <div className="mobile-auth-section">
+        <div className={styles.mobile_auth_section}>
           {loading ? (
-            <button className="nav-button" disabled>
+            <button className={styles.nav_button} disabled>
               <User size={20} />
             </button>
           ) : (
             <button 
-              className="nav-button"
+              className={styles.nav_button}
               onClick={handleProfileClick}
             >
               {user ? (
-                <span className="nav-button-items">
+                <span className={styles.nav_button_items}>
                   <User size={20} />
                   Profile
                 </span>
               ) : (
-                <span className="nav-button-items">
+                <span className={styles.nav_button_items}>
                   <LogIn size={20} />
                   Login
                 </span>

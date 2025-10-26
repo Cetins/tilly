@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "@/app/context/ThemeContext";
 import { Moon, Sun } from "lucide-react";
+import styles from './ThemeToggle.module.css'
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -8,7 +9,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="theme-toggle-button"
+      className={styles.theme_toggle_button}
       aria-label="Toggle theme"
       title={theme === "dark" ? "Light mode" : "Dark mode"}
     >

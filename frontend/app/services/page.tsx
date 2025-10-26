@@ -1,9 +1,11 @@
+import styles from './Services.module.css'
+
 export default function ServicesPage () {
     return (
-        <div className="page-container">
+        <div className={styles.page_container}>
             {/* Hero Section */}
             <section>
-                <div className="text-block">
+                <div className={styles.text_block}>
                 <h1>Small Business Management, Made Simple</h1>
                 <p>
                     Tilly helps you manage payments, commissions, and product sales in one intuitive platform. 
@@ -14,7 +16,7 @@ export default function ServicesPage () {
 
             {/* Services Section */}
             <section>
-                <div className="text-block">
+                <div className={styles.text_block}>
                     <h2>Everything Your Small Business Needs</h2>
                     <p>Designed specifically for businesses with mixed payment structures and growth ambitions</p>
                     
@@ -23,7 +25,7 @@ export default function ServicesPage () {
                         Seamlessly handle wages, self-employed contractors, and commission-based staff 
                         in one unified system.
                     </p>
-                    <ul className="text-list">
+                    <ul className={styles.text_list}>
                         <li>Automated commission calculations</li>
                         <li>Flexible payment scheduling</li>
                         <li>Real-time earnings tracking</li>
@@ -33,7 +35,7 @@ export default function ServicesPage () {
                     <p>
                         Add product offerings to your service business without the operational headache.
                     </p>
-                    <ul className="text-list">
+                    <ul className={styles.text_list}>
                         <li>Easy product catalog setup</li>
                         <li>Inventory tracking</li>
                         <li>Seamless checkout experience</li>
@@ -43,7 +45,7 @@ export default function ServicesPage () {
                     <p>
                         Empower your team with clear visibility into their earnings and performance.
                     </p>
-                    <ul className="text-list">
+                    <ul className={styles.text_list}>
                         <li>Real-time commission dashboards</li>
                         <li>Performance analytics</li>
                         <li>Automated payout reports</li>
@@ -53,13 +55,13 @@ export default function ServicesPage () {
 
             {/* Value Proposition */}
             <section>
-                <div className="text-block">
+                <div className={styles.text_block}>
                     <h2>Why Small Businesses Choose Tilly</h2>
                     
                     <h3>Built for Real Business Challenges</h3>
                     <p>
                         We understand that modern small businesses often have hybrid teams. 
-                        Tilly handles this complexity so you don&#39;t have to.
+                        Tilly handles this complexity so you don't have to.
                     </p>
 
                     <h3>Affordable Growth</h3>
@@ -74,14 +76,14 @@ export default function ServicesPage () {
 
                     <h3>Transparent by Design</h3>
                     <p>
-                        Follow our open development journey and see exactly how we&#39;re building the tools you need.
+                        Follow our open development journey and see exactly how we're building the tools you need.
                     </p>
                 </div>
             </section>
 
             {/* Final CTA */}
             <section>
-                <div className="text-block">
+                <div className={styles.text_block}>
                     <h2>Ready to Simplify Your Business Operations?</h2>
                     <p>
                         Join small business owners who are taking back their time and growing their revenue with Tilly.

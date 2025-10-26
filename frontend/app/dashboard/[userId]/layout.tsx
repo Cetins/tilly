@@ -2,10 +2,11 @@
 
 import { useParams } from 'next/navigation'
 import { Settings, Home, BarChart3, DollarSign } from 'lucide-react'
-import ThemeToggle from '@/app/components/ThemeToggle'
+import ThemeToggle from '@/app/components/ThemeToggle/ThemeToggle'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import LogoutButton from '@/app/components/auth/Logout'
+import styles from './Dashboard.module.css'
 
 export default function DashboardLayout({
   children,
@@ -22,18 +23,18 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="dashboard-container">
+    <div className={styles.dashboard_container}>
       {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="sidebar-header">
+      <aside className={styles.sidebar}>
+        <div className={styles.sidebar_header}>
           <h2>Dashboard</h2>
         </div>
         
         {/* Sidebar Navigation - Column Direction */}
-        <nav className="sidebar-nav-column">
+        <nav className={styles.sidebar_nav_column}>
           <Link 
             href={`/dashboard/${userId}`} 
-            className={`sidebar-nav-item ${isActive(`/dashboard/${userId}`) ? 'active' : ''}`}
+            className={`${styles.sidebar_nav_item} ${isActive(`/dashboard/${userId}`) ? styles.active : ''}`}
           >
             <Home size={20} />
             <span>Overview</span>
@@ -41,7 +42,7 @@ export default function DashboardLayout({
           
           <Link 
             href={`/dashboard/${userId}/sales`} 
-            className={`sidebar-nav-item ${isActive(`/dashboard/${userId}/sales`) ? 'active' : ''}`}
+            className={`${styles.sidebar_nav_item} ${isActive(`/dashboard/${userId}/sales`) ? styles.active : ''}`}
           >
             <DollarSign size={20} />
             <span>Submit Sales</span>
@@ -49,7 +50,7 @@ export default function DashboardLayout({
           
           <Link 
             href={`/dashboard/${userId}/analytics`} 
-            className={`sidebar-nav-item ${isActive(`/dashboard/${userId}/analytics`) ? 'active' : ''}`}
+            className={`${styles.sidebar_nav_item} ${isActive(`/dashboard/${userId}/analytics`) ? styles.active : ''}`}
           >
             <BarChart3 size={20} />
             <span>Analytics</span>
@@ -57,7 +58,7 @@ export default function DashboardLayout({
           
           <Link 
             href={`/dashboard/${userId}/settings`} 
-            className={`sidebar-nav-item ${isActive(`/dashboard/${userId}/settings`) ? 'active' : ''}`}
+            className={`${styles.sidebar_nav_item} ${isActive(`/dashboard/${userId}/settings`) ? styles.active : ''}`}
           >
             <Settings size={20} />
             <span>Settings</span>
@@ -65,7 +66,7 @@ export default function DashboardLayout({
         </nav>
 
         {/* Sidebar Footer - Column Direction */}
-        <div className="sidebar-footer-column">
+        <div className={styles.sidebar_footer_column}>
           <ThemeToggle />
           
           <LogoutButton />
@@ -73,7 +74,7 @@ export default function DashboardLayout({
       </aside>
 
       {/* Main Content */}
-      <main className="dashboard-main">
+      <main className={styles.dashboard_main}>
         {children}
       </main>
     </div>
