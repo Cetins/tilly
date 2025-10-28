@@ -1,4 +1,4 @@
-import UnderConstruction from "../components/UnderConstruction"
+import UnderConstruction from "@/app/components/UnderConstruction"
 
 export default function ContactPage() {
     return (
