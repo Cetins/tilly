@@ -42,8 +42,6 @@
 }
 
 * {
-<<<<<<< HEAD
-=======
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -125,7 +123,6 @@ a:hover {
   border: 1px solid var(--color-primary);
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
->>>>>>> 1931135 (missing theme selection when revisit fixed. theme provider added. theme toggle button added to footer)
   box-sizing: border-box;
   margin: 0;
   padding: 0;
