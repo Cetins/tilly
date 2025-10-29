@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/SupabaseClient";
-import styles from './Auth.module.css'
+import styles from './Auth.module.css';
+import Input from "../Input/Input";
+import ButtonFill from "../ButtonFill/ButtonFill";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -48,16 +50,15 @@ export default function Login() {
   return (
     <div className={styles.card}>
       <h2>Log In</h2>
-      <input
-        className={styles.input_field}
+      <Input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <div className={styles.password_container}>
-        <input
-          className={`${styles.input_field} ${styles.password_input}`}
+        <Input
+          className={styles.password_input}
           type={showPassword ? "text" : "password"}
           placeholder="Password"
           value={password}
@@ -71,7 +72,7 @@ export default function Login() {
           {showPassword ? "HIDE" : "SHOW"}
         </button>
       </div>
-      <button className={styles.btn_fill} onClick={handleLogin}>Log In</button>
+      <ButtonFill onClick={handleLogin}>Log In</ButtonFill>
       {message && <p>{message}</p>}
     </div>
   );

@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { supabase } from "../../../lib/SupabaseClient";
+import styles from './Auth.module.css';
+import ButtonFill from "../ButtonFill/ButtonFill";
+import Input from "../Input/Input";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -26,30 +29,30 @@ export default function SignUp() {
   return (
     <div className="card">
       <h2>Sign Up</h2>
-      <input
-        className="input-field"
+      <Input 
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <div className="password-container">
-        <input
-          className="input-field password-input"
-          type={showPassword ? "text" : "password"}
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+
+      <div className={styles.password_container}>
+      <Input
+        type={showPassword ? "text" : "password"}
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className={styles.password_input}
+      />
         <button
           type="button"
-          className="password-toggle"
+          className={styles.password_toggle}
           onClick={togglePasswordVisibility}
         >
           {showPassword ? "HIDE" : "SHOW"}
         </button>
       </div>
-      <button className="btn-fill" onClick={handleSignUp}>Sign Up</button>
+      <ButtonFill onClick={handleSignUp}>Sign Up</ButtonFill>
       {message && <p>{message}</p>}
     </div>
   );

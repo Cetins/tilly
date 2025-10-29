@@ -21,11 +21,6 @@ export default function AboutPage() {
        </section>
 
        <section className={styles.hero}>
-         <div className={styles.hero_text}>
-           <p>That&apos;s where Tilly comes in. I started Tilly to make life easier for small businesses — to help them manage payments, commissions, and products all in one place. Our mission is simple: reduce the digital stress so that business owners can focus on what really matters — serving their customers and growing sustainably.</p>
-           <p>Tilly is being built openly, step by step, and we share our journey here. We want small businesses to feel supported, empowered, and equipped with a tool that truly fits their needs. No unnecessary complexity, no expensive barriers — just smart, practical solutions designed for the people who keep our communities running.</p>
-           <p>Follow along to see Tilly grow, and join us on our journey to make small business management simpler, smarter, and more enjoyable.</p>
-         </div>
          <div className={styles.hero_image}>
            <Image
              src="/server-holding-tablet.png"
@@ -33,6 +28,11 @@ export default function AboutPage() {
              height={500}
              alt="Sales tracking illustration"
            />
+         </div>
+         <div className={styles.hero_text}>
+           <p>That&apos;s where Tilly comes in. I started Tilly to make life easier for small businesses — to help them manage payments, commissions, and products all in one place. Our mission is simple: reduce the digital stress so that business owners can focus on what really matters — serving their customers and growing sustainably.</p>
+           <p>Tilly is being built openly, step by step, and we share our journey here. We want small businesses to feel supported, empowered, and equipped with a tool that truly fits their needs. No unnecessary complexity, no expensive barriers — just smart, practical solutions designed for the people who keep our communities running.</p>
+           <p>Follow along to see Tilly grow, and join us on our journey to make small business management simpler, smarter, and more enjoyable.</p>
          </div>
        </section>
 
